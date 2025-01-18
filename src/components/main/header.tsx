@@ -62,7 +62,7 @@ export default function Header() {
         </div>
 
         <div
-          className={`absolute lg:hidden md:rounded-sm w-full md:w-fit md:px-8 md:py-6 shadow-lg top-20 py-4 z-40 left-0 md:left-auto md:right-0 backdrop-blur-lg bg-gradient-to-r from-primary/95 to-secondary/95 items-center justify-center gap-4 transition-opacity duration-700 ease-in-out transform ${
+          className={`absolute lg:hidden md:rounded-sm w-full md:w-fit md:px-8 md:py-6 shadow-lg bottom-0 translate-y-full py-4 z-40 left-0 md:left-auto md:right-0 backdrop-blur-lg bg-gradient-to-r from-primary/95 to-secondary/95 items-center justify-center gap-4 transition-opacity duration-700 ease-in-out transform ${
             showMenu ? "opacity-100 flex" : "hidden opacity-0"
           }`}
           ref={ref}
