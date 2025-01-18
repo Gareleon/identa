@@ -1,61 +1,109 @@
+"use client";
+
+import React, { useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
 import Typography from "../typography";
 import { Button } from "../ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import Divider from "./titleDivider";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-
-const formSchema = z.object({
-  first_name: z
-    .string()
-    .min(2, "First name must be at least 2 characters long")
-    .max(50, "First name must not exceed 50 characters")
-    .trim(),
-  last_name: z
-    .string()
-    .min(2, "Last name must be at least 2 characters long")
-    .max(50, "Last name must not exceed 50 characters")
-    .trim(),
-  email: z
-    .string()
-    .email("Invalid email format")
-    .min(5, "Email must be at least 5 characters long")
-    .max(100, "Email must not exceed 100 characters")
-    .trim(),
-  message: z
-    .string()
-    .min(10, "Message must be at least 10 characters long")
-    .max(500, "Message must not exceed 500 characters")
-    .trim(),
-});
 
 export default function Contact() {
-  // Define the form
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
+  // State to manage form inputs
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    message: "",
+  });
+
+  // Handle input change
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    // Clear error on change
+    setErrors((prev) => ({
+      ...prev,
+      [name]: "",
+    }));
+  };
+
+  // Validate form inputs
+  const validate = () => {
+    const newErrors: typeof errors = {
       first_name: "",
       last_name: "",
       email: "",
       message: "",
-    },
-  });
+    };
 
-  // Define submit handler
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-  }
+    if (formData.first_name.trim().length < 2) {
+      newErrors.first_name = "First name must be at least 2 characters long";
+    }
+    if (formData.last_name.trim().length < 2) {
+      newErrors.last_name = "Last name must be at least 2 characters long";
+    }
+    if (!formData.email.includes("@")) {
+      newErrors.email = "Invalid email format";
+    }
+    if (formData.message.trim().length < 10) {
+      newErrors.message = "Message must be at least 10 characters long";
+    } else if (formData.message.trim().length > 1500) {
+      newErrors.message = "Message must not exceed 1500 characters";
+    }
+
+    setErrors(newErrors);
+
+    // Return true if there are no errors
+    return Object.values(newErrors).every((err) => err === "");
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!validate()) return;
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert("Email sent successfully!");
+        setFormData({
+          first_name: "",
+          last_name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        const errorData = await response.json();
+        alert(`Failed to send email: ${errorData.error}`);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("An error occurred. Please try again later.");
+    }
+  };
+
   return (
     <section id="contact" className="w-full bg-muted">
       <div className="w-full h-[60%] min-h-max mx-auto py-10 flex flex-col justify-center items-center ">
@@ -99,140 +147,111 @@ export default function Contact() {
               text="Zakažite svoj termin "
               className="mb-6 text-gray-700"
             />
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="min-h-[60vh] grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700"
-              >
-                {/* First Name */}
-                <FormField
-                  control={form.control}
+            <form
+              onSubmit={handleSubmit}
+              className="min-h-[60vh] grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700"
+            >
+              {/* First Name */}
+              <div>
+                <label htmlFor="first_name" className="block mb-2 sr-only">
+                  <Typography variant="p" text="First Name" />
+                </label>
+                <Input
+                  type="text"
+                  id="first_name"
                   name="first_name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>
-                        <Typography variant="p" text="First Name" />
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          type="text"
-                          placeholder="Ime"
-                          id="inputFirstName"
-                          className="shadow-lg w-full px-4 py-2 rounded-md border border-gray-300"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
+                  placeholder="Ime"
+                  value={formData.first_name}
+                  onChange={handleChange}
+                  className={`shadow-lg w-full px-4 py-2 rounded-md border ${
+                    errors.first_name ? "border-red-500" : "border-gray-300"
+                  }`}
                 />
+                {errors.first_name && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.first_name}
+                  </p>
+                )}
+              </div>
 
-                {/* Last Name */}
-                <FormField
-                  control={form.control}
+              {/* Last Name */}
+              <div>
+                <label htmlFor="last_name" className="block mb-2 sr-only">
+                  <Typography variant="p" text="Last Name" />
+                </label>
+                <Input
+                  type="text"
+                  id="last_name"
                   name="last_name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>
-                        <Typography variant="p" text="Last Name" />
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          type="text"
-                          placeholder="Prezime"
-                          id="inputLastName"
-                          className="shadow-lg w-full px-4 py-2 rounded-md border border-gray-300"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
+                  placeholder="Prezime"
+                  value={formData.last_name}
+                  onChange={handleChange}
+                  className={`shadow-lg w-full px-4 py-2 rounded-md border ${
+                    errors.last_name ? "border-red-500" : "border-gray-300"
+                  }`}
                 />
+                {errors.last_name && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.last_name}
+                  </p>
+                )}
+              </div>
 
-                {/* Email */}
-                <FormField
-                  control={form.control}
+              {/* Email */}
+              <div className="col-span-full">
+                <label htmlFor="email" className="block mb-2 sr-only">
+                  <Typography variant="p" text="Email" />
+                </label>
+                <Input
+                  type="email"
+                  id="email"
                   name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>
-                        <Typography variant="p" text="Email" />
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          type="email"
-                          placeholder="Email adresa"
-                          id="inputEmail"
-                          className="shadow-lg w-full px-4 py-2 rounded-md border border-gray-300"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
+                  placeholder="Email adresa"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={`shadow-lg w-full px-4 py-2 rounded-md border ${
+                    errors.email ? "border-red-500" : "border-gray-300"
+                  }`}
                 />
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                )}
+              </div>
 
-                {/* Message */}
-                <FormField
-                  control={form.control}
+              {/* Message */}
+              <div className="col-span-full">
+                <label htmlFor="message" className="block mb-2 sr-only">
+                  <Typography variant="p" text="Message" />
+                </label>
+                <Textarea
+                  id="message"
                   name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>
-                        <Typography variant="p" text="Message" />
-                      </FormLabel>
-                      <FormControl>
-                        <Textarea
-                          name="message"
-                          id="message"
-                          placeholder="Poruka"
-                          rows={14}
-                          className="shadow-lg w-full px-4 py-2 rounded-md border border-gray-300"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
+                  placeholder="Poruka"
+                  rows={14}
+                  value={formData.message}
+                  onChange={handleChange}
+                  className={`shadow-lg w-full px-4 py-2 rounded-md border ${
+                    errors.message ? "border-red-500" : "border-gray-300"
+                  }`}
                 />
+                {errors.message && (
+                  <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                )}
+              </div>
 
-                {/* Submit Button */}
-                <Button
-                  variant="default"
-                  type="submit"
-                  className="w-full rounded-full md:p-6 col-span-full text-center"
-                >
-                  <Typography text="Zakaži" variant="h5" className="inline" />
-                  <FaPaperPlane className="ml-2 inline" />
-                </Button>
-              </form>
-            </Form>
+              {/* Submit Button */}
+              <Button
+                variant="default"
+                type="submit"
+                className="w-full rounded-full md:p-6 col-span-full text-center"
+              >
+                <Typography text="Zakaži" variant="h5" className="inline" />
+                <FaPaperPlane className="ml-2 inline" />
+              </Button>
+            </form>
           </div>
         </div>
-        <div className="w-full h-96 max-w-screen-xl mx-auto  justify-center items-center px-4">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2902.3048320452417!2d21.916115999999995!3d43.3288099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4755b0cfa5f5a4f9%3A0x9751449f9d564b80!2sStomatolo%C5%A1ka%20Ordinacija%20IDENTA!5e0!3m2!1sen!2srs!4v1737144821935!5m2!1sen!2srs"
-            allowFullScreen={true}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-full"
-            title="Google Maps"
-          ></iframe>
-        </div>
       </div>
-    </section>
-  );
-}
-
-export function ContactForm() {
-  return (
-    <section
-      className="min-h-screen w-full flex flex-col justify-between items-center gap-8 py-16 px-4 sm:px-6 lg:px-8"
-      id="contact-form"
-    >
-      <Typography text="Contact" variant="h1" />
-      <div className="w-full"></div>
     </section>
   );
 }

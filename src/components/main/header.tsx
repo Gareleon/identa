@@ -10,7 +10,7 @@ const navItems = [
   { name: "O nama", href: "#" },
   { name: "Usluge", href: "#services" },
   //   { name: "Pre i posle", href: "#" },
-  { name: "Cenovnik", href: "#" },
+  { name: "Cenovnik", href: "#pricing" },
   { name: "064 222-3288", href: "tel:+381642223288" },
   { name: "Zakaži pregled", href: "#contact" },
 ];
@@ -23,8 +23,8 @@ export default function Header() {
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
-  const ref = useRef(null);
-  const buttonRef = useRef(null); // Ref for button
+  const ref = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLDivElement>(null); // Ref for button
   const handleClickOutside = (event: Event) => {
     // Ensure the type is valid, and check if the click is outside the ref element
     if (

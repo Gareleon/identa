@@ -66,7 +66,9 @@ export function Services() {
               </div>
 
               <Typography variant="h5" text={service.description} />
-              <CustomButton text="Saznaj više" variant="outline" />
+              <a href="#pricing" title="Saznaj više">
+                <CustomButton text="Saznaj više" variant="outline" />
+              </a>
             </div>
             <Image
               src={service.image_href}

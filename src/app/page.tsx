@@ -2,8 +2,8 @@ import Contact from "@/components/main/Contact";
 import Footer from "@/components/main/footer";
 import Header from "@/components/main/header";
 import Intro from "@/components/main/intro";
+import { Prices } from "@/components/main/pricing";
 import { Services } from "@/components/main/services";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -11,6 +11,7 @@ export default function Home() {
       <Header />
       <Intro />
       <Services />
+      <Prices />
       <Contact />
       <Footer />
     </div>

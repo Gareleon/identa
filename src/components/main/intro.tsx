@@ -22,7 +22,7 @@ export default function Intro() {
             variant="p"
             text="Posetite nas i uživajte u bezbolnim stomatološkim uslugama!"
           />
-          <a href="#contact" title="Zakaži pregled">
+          <a href="#contact" title="Zakaži pregled" className="w-fit">
             <CustomButton text="Zakaži pregled" variant="default" />
           </a>
         </div>

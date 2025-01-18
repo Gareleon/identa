@@ -4,7 +4,6 @@ import {
   contactDetails,
   contactInfo,
   projects,
-  socialMediaLinks,
   usefulLinks,
 } from "./footerData";
 import Typography from "../typography";
