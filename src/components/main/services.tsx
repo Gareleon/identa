@@ -92,7 +92,7 @@ const services = [
     },
     services: [
       {
-        name: "Popravka i lečenje Zuba",
+        name: "Popravka i lečenje zuba",
         icon: <GiToothbrush size={iconSize} className={iconStyle} />,
         description:
           "Efikasno lečenje karijesa i obnavljanje zdravlja vaših zuba uz pomoć savremenih tehnika.",
