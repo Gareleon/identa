@@ -1,5 +1,5 @@
 import { MdFacebook, MdOutlinePhoneInTalk } from "react-icons/md";
-import { RxInstagramLogo, RxLinkedinLogo } from "react-icons/rx";
+import { RxInstagramLogo } from "react-icons/rx";
 import { FaMapMarkedAlt } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 

@@ -1,8 +1,7 @@
 import Typography from "../typography";
 import Image from "next/image";
 import Divider from "./titleDivider";
-import CustomButton from "./customButton";
-import { GiHealingShield, GiToothbrush } from "react-icons/gi";
+import { GiToothbrush } from "react-icons/gi";
 import {
   RiBracesLine,
   RiScissors2Line,
@@ -11,7 +10,6 @@ import {
 } from "react-icons/ri";
 import { MdCleaningServices, MdEmail } from "react-icons/md";
 import { BiChild } from "react-icons/bi";
-import { Button } from "../ui/button";
 import { PhoneCall } from "lucide-react";
 
 const iconSize = 30;
@@ -184,7 +182,10 @@ export function Services() {
               />
               <ul key={index} className="space-y-3 ">
                 {service.services.map((service, index) => (
-                  <li className="flex flex-row gap-2 justify-start items-center">
+                  <li
+                    className="flex flex-row gap-2 justify-start items-center"
+                    key={index}
+                  >
                     <span className="inline-block">{service.icon}</span>
 
                     <Typography
