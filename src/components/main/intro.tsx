@@ -29,11 +29,11 @@ export default function Intro() {
 
         <div className="w-full sm:w-1/2 flex justify-center">
           <Image
-            src="/images/intro-illustration.jpg"
+            src="/images/intro-illustration-1.jpg"
             alt="identa-1"
             width={500}
-            height={500}
-            className="rounded-full shadow-md"
+            height={800}
+            className="rounded-3xl shadow-lg shadow-black/50 "
           />
         </div>
       </div>

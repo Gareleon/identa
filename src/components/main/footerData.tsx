@@ -16,7 +16,7 @@ const contactInfo = [
     type: "location",
     icon: <FaMapMarkedAlt size={50} className="text-primary/80" />,
     title: "Niš, Srbija",
-    subtitle: "Ilije Bircanina 18, Niš",
+    subtitle: "Ilije Birčanina 18, Niš",
     href: "https://maps.app.goo.gl/cLPcCnuoD4RpKtV99",
   },
   {
@@ -31,21 +31,15 @@ const contactInfo = [
 const socialMediaLinks = [
   {
     name: "Facebook",
-    href: "https://www.facebook.com/identa.dentalstudio",
+    href: "https://www.facebook.com/profile.php?id=100063612251504",
     icon: <MdFacebook className="hover:text-primary" size={30} />,
     title: "Identa Facebook",
   },
   {
     name: "Instagram",
-    href: "https://www.instagram.com/identa_dentalstudio/",
+    href: "https://www.instagram.com/identabiljanapetrovic/?hl=en",
     icon: <RxInstagramLogo className="hover:text-primary" size={30} />,
     title: "Identa Instagram",
-  },
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/company/identa-dentalstudio/",
-    icon: <RxLinkedinLogo className="hover:text-primary" size={30} />,
-    title: "Identa LinkedIn",
   },
 ];
 

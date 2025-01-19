@@ -4,6 +4,7 @@ import {
   contactDetails,
   contactInfo,
   projects,
+  socialMediaLinks,
   usefulLinks,
 } from "./footerData";
 import Typography from "../typography";
@@ -34,9 +35,12 @@ export default function Footer() {
           ))}
         </div>
         {/* Social Media Links */}
-        {/* <div className="w-full  h-fit px-4 md:px-12 py-5 bg-input">
+        <div className="w-full  h-fit px-4 md:px-12 py-5 bg-input">
           <div className="flex flex-col md:flex-row  justify-between items-center max-w-screen-md mx-auto">
-            <Typography text="Connect with me on social media" variant="p" />
+            <Typography
+              text="Povežite se sa nama na društvenim mrežama"
+              variant="p"
+            />
             <div className="space-x-4 text-2xl flex flex-wrap justify-center py-2">
               {socialMediaLinks.map((social, index) => (
                 <a
@@ -51,7 +55,7 @@ export default function Footer() {
               ))}
             </div>
           </div>
-        </div> */}
+        </div>
 
         {/* Company Info */}
         <div className="max-w-screen-xl px-4 mx-auto  mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
