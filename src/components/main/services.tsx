@@ -29,21 +29,21 @@ const services = [
     },
     services: [
       {
-        name: "Oralna Hirurgija",
+        name: "Oralna hirurgija",
         icon: <RiScissors2Line size={iconSize} className={iconStyle} />,
         description:
           "Profesionalni tretmani kao što su vađenje umnjaka, implantologija i rešavanje komplikovanih oralnih stanja sa preciznošću i pažnjom.",
         image_href: "/images/oral-surgery.jpg",
       },
       {
-        name: "Popravka i Lečenje Zuba",
+        name: "Popravka i lečenje zuba",
         icon: <GiToothbrush size={iconSize} className={iconStyle} />,
         description:
           "Efikasno lečenje karijesa i obnavljanje zdravlja vaših zuba uz pomoć savremenih tehnika.",
         image_href: "/images/tooth-repair.jpg",
       },
       {
-        name: "Uklanjanje Kamenca",
+        name: "Uklanjanje kamenca",
         icon: <MdCleaningServices size={iconSize} className={iconStyle} />,
         description:
           "Uklanjanje zubnog kamenca i poliranje za bolju oralnu higijenu i prevenciju problema sa desnima.",
@@ -64,14 +64,14 @@ const services = [
         image_href: "/images/orthodontics.jpg",
       },
       {
-        name: "Dečija Stomatologija",
+        name: "Dečija stomatologija",
         icon: <BiChild size={iconSize} className={iconStyle} />,
         description:
           "Posebna pažnja posvećena oralnom zdravlju dece sa fokusom na preventivne tretmane i bezbolne procedure.",
         image_href: "/images/pediatric-dentistry.jpg",
       },
       {
-        name: "Estetska Stomatologija",
+        name: "Estetska stomatologija",
         icon: <RiSparkling2Line size={iconSize} className={iconStyle} />,
         description:
           "Beljenje zuba, fasete i estetski tretmani za savršen osmeh.",
@@ -92,21 +92,21 @@ const services = [
     },
     services: [
       {
-        name: "Popravka i Lečenje Zuba",
+        name: "Popravka i lečenje Zuba",
         icon: <GiToothbrush size={iconSize} className={iconStyle} />,
         description:
           "Efikasno lečenje karijesa i obnavljanje zdravlja vaših zuba uz pomoć savremenih tehnika.",
         image_href: "/images/tooth-repair.jpg",
       },
       {
-        name: "Vađenje Zuba",
+        name: "Vađenje zuba",
         icon: <RiScissors2Line size={iconSize} className={iconStyle} />,
         description:
           "Bezbolne procedure vađenja zuba uz brigu o vašem oralnom zdravlju.",
         image_href: "/images/extraction.jpg",
       },
       {
-        name: "Uklanjanje Kamenca",
+        name: "Uklanjanje kamenca",
         icon: <MdCleaningServices size={iconSize} className={iconStyle} />,
         description:
           "Uklanjanje zubnog kamenca i poliranje za bolju oralnu higijenu i prevenciju problema sa desnima.",
@@ -127,14 +127,14 @@ const services = [
         image_href: "/images/orthodontics.jpg",
       },
       {
-        name: "Dečija Stomatologija",
+        name: "Dečija stomatologija",
         icon: <BiChild size={iconSize} className={iconStyle} />,
         description:
           "Posebna pažnja posvećena oralnom zdravlju dece sa fokusom na preventivne tretmane i bezbolne procedure.",
         image_href: "/images/pediatric-dentistry.jpg",
       },
       {
-        name: "Estetska Stomatologija",
+        name: "Estetska stomatologija",
         icon: <RiSparkling2Line size={iconSize} className={iconStyle} />,
         description:
           "Beljenje zuba, fasete i estetski tretmani za savršen osmeh.",
