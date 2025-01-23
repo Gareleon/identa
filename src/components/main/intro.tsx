@@ -34,6 +34,7 @@ export default function Intro() {
             width={500}
             height={600}
             className="rounded-2xl shadow-2xl shadow-black/80"
+            loading="lazy"
           />
         </div>
       </div>
