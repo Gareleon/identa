@@ -1,5 +1,6 @@
 import Contact from "@/components/main/Contact";
 import Footer from "@/components/main/footer";
+import Gallery from "@/components/main/gallery";
 import Header from "@/components/main/header";
 import Intro from "@/components/main/intro";
 import { Prices } from "@/components/main/pricing";
@@ -12,6 +13,7 @@ export default function Home() {
       <Intro />
       <Services />
       <Prices />
+      <Gallery />
       <Contact />
       <Footer />
     </div>

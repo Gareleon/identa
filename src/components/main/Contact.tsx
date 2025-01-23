@@ -112,11 +112,11 @@ export default function Contact() {
 
         <div className="max-w-screen-xl h-fit grid grid-cols-1 lg:grid-cols-2 justify-center items-center mx-auto py-10 sm:px-6">
           {/* Left Section */}
-          <div className="w-full h-full text-white bg-gradient-to-r from-primary to-secondary shadow p-4 md:p-12 col-span-1 ">
-            <div className="cta-info">
+          <div className="w-full h-full text-white bg-gradient-to-r from-primary to-secondary shadow  col-span-1 ">
+            <div className="bg-slate-600/30 w-full h-full p-4 md:p-12">
               <Typography variant="h2" text="100% Zagarantovano zadovoljstvo" />
               <Typography
-                variant="p"
+                variant="h5"
                 text="Tražite pouzdane i visokokvalitetne stomatološke usluge? U stomatološkoj ordinaciji Identa posvećeni smo pružanju vrhunske nege, koristeći savremenu tehnologiju i individualan pristup svakom pacijentu. Vaš osmeh je naša misija!"
                 className="mt-4"
               />
@@ -125,7 +125,7 @@ export default function Contact() {
                 text="Kako da započnete?"
                 className="mt-6"
               />
-              <ul className="list-disc list-inside mt-4 space-y-2">
+              <ul className="list-disc list-inside mt-4 space-y-2 font-semibold">
                 <li>Kontaktirajte nas za besplatne konsultacije</li>
                 <li>Razgovarajte sa našim stručnim timom o svojim potrebama</li>
                 <li>
@@ -133,7 +133,7 @@ export default function Contact() {
                 </li>
               </ul>
               <Typography
-                variant="p"
+                variant="h5"
                 text="Neka vaši zubi i osmeh budu u najboljim rukama. Vaš prvi korak ka savršenom osmehu počinje upravo ovde!"
                 className="mt-6"
               />

@@ -88,7 +88,7 @@ const services = [
         email: "dr.kristina.p@gmail.com",
         address: "Ilije Bircanina 18, Nis",
       },
-      image_href: "/images/intro-illustration.jpg",
+      image_href: "/images/dr-kristina-2.jpg",
     },
     services: [
       {

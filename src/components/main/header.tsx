@@ -1,16 +1,15 @@
 "use client";
 
-import { RiToothFill } from "react-icons/ri";
-import Typography from "../typography";
 import { Button } from "../ui/button";
 import { IoMdMenu } from "react-icons/io";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 const navItems = [
   { name: "O nama", href: "#" },
   { name: "Usluge", href: "#services" },
   //   { name: "Pre i posle", href: "#" },
-  { name: "Cenovnik", href: "#pricing" },
+  { name: "Galerija", href: "#gallery" },
   { name: "064 222-3288", href: "tel:+381642223288" },
   { name: "Zakaži pregled", href: "#contact" },
 ];
@@ -50,8 +49,14 @@ export default function Header() {
           className="flex items-center gap-4 text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text hover:cursor-pointer"
           onClick={() => scrollToTop()}
         >
-          <RiToothFill size={50} className="text-secondary" />
-          <Typography variant="h1" text="Identa" />
+          {/* <RiToothFill size={50} className="text-secondary" /> */}
+          <Image
+            src="/images/logo.png"
+            alt="identa-logo"
+            width={80}
+            height={80}
+          />
+          {/* <Typography variant="h1" text="Identa" /> */}
         </div>
         <div ref={buttonRef}>
           <IoMdMenu

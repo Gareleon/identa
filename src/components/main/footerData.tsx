@@ -8,7 +8,7 @@ const contactInfo = [
     type: "phone",
     icon: <MdOutlinePhoneInTalk size={50} className="text-primary/80" />,
     title: "+381 642223288",
-    subtitle: "Pon-Pet 08:00-16:00",
+    subtitle: "Pon-Pet 10:00-20:00",
     href: "tel:+381642223288",
   },
 
@@ -99,6 +99,21 @@ const contactDetails = [
   {
     name: "kontakt@identa.rs",
     href: "mailto:kontakt@identa.rs",
+    title: "Kontakt e-mail Identa",
+  },
+  {
+    name: "+381 631802999",
+    href: "tel:+381631802999",
+    title: "Kontakt telefon Identa",
+  },
+  {
+    name: "dr.kristina.p@gmail.com",
+    href: "mailto:dr.kristina.p@gmail.com",
+    title: "Kontakt e-mail Identa",
+  },
+  {
+    name: "dr.b.petrovic@gmail.com",
+    href: "mailto:dr.b.petrovic@gmail.com",
     title: "Kontakt e-mail Identa",
   },
 ];
