@@ -74,19 +74,19 @@ const projects = [
 const usefulLinks = [
   {
     name: "Saveti za negu zuba",
-    href: "/blog/saveti-za-negu-zuba",
+    href: "https://www.apotekaflos.rs/sr/clanak/5-saveta-za-pravilnu-negu-zuba",
   },
   {
     name: "Zašto su redovni pregledi važni?",
-    href: "/blog/redovni-pregledi",
+    href: "https://hypelist.rs/stomatoloski-pregled/",
   },
   {
     name: "Kako odabrati pravog stomatologa?",
-    href: "/blog/odabir-stomatologa",
+    href: "https://stomatologija.me/blog/kako-izabrati-pravog-stomatologa/",
   },
   {
     name: "Najnovije tehnologije u stomatologiji",
-    href: "/blog/nove-tehnologije",
+    href: "https://www.ictvesti.com/nove-tehnologije-u-sluzbi-inovacija-u-stomatologiji/",
   },
 ];
 
