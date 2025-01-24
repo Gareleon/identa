@@ -21,8 +21,8 @@ const services = [
       name: "Dr Biljana Petrovic",
       specialty: "Specijalista oralne hirurgije",
       contact: {
-        phone: "064 222 32 88",
-        email: "dr.b.petrovic@gmail.com",
+        phone: "tel:+381642223288",
+        email: "mailto:dr.b.petrovic@gmail.com",
         address: "Ilije Bircanina 18, Nis",
       },
       image_href: "/images/intro-illustration-1.jpg",
@@ -84,8 +84,8 @@ const services = [
       name: "Dr Kristina Petkovic",
       specialty: "Stomatolog",
       contact: {
-        phone: "063 180 29 99",
-        email: "dr.kristina.p@gmail.com",
+        phone: "tel:+381631802999",
+        email: "mailto:dr.kristina.p@gmail.com",
         address: "Ilije Bircanina 18, Nis",
       },
       image_href: "/images/dr-kristina-2.jpg",

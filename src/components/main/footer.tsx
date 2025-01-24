@@ -79,16 +79,8 @@ export default function Footer() {
             <hr className="my-4 w-20 h-1 bg-white" />
             <ul>
               {projects.map((project, index) => (
-                <li key={index}>
-                  <a
-                    href={project.href}
-                    className="text-sm hover:text-primary"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={project.title}
-                  >
-                    {project.name}
-                  </a>
+                <li key={index} className="hover:text-primary cursor-text">
+                  {project.name}
                 </li>
               ))}
             </ul>
