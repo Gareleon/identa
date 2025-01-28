@@ -13,24 +13,48 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="w-full ">
-      <div className="w-full mx-auto py-8">
-        <div className="w-full mx-auto  max-w-screen-xl space-y-4 sm:space-y-0 grid grid-cols-1 md:grid-cols-3 justify-center items-center pb-8 px-4">
+      <div className="w-full mx-auto">
+        <div className="w-full mx-auto  max-w-screen-xl space-y-4 lg:space-y-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-center pb-8 px-4">
           {contactInfo.map((item, index) => (
             <div
-              className="flex flex-row gap-2 items-center justify-start sm:justify-center"
+              className="flex flex-row gap-2 items-center justify-start sm:justify-center pb-6"
               key={index}
             >
-              <div className="inline">{item.icon}</div>
-              <div className="inline">
-                <Link
-                  href={item.href}
-                  title={item.title}
-                  className="hover:text-primary"
-                >
-                  {item.title}
-                </Link>
-                <Typography variant="p" text={item.subtitle} />
-              </div>
+              {item.type === "phone" ? (
+                <>
+                  <div className="inline">{item.icon}</div>
+                  <div className="inline">
+                    <Link
+                      href={item.href}
+                      title={item.title}
+                      className="hover:text-primary"
+                    >
+                      {item.title}
+                    </Link>
+                    <Link
+                      href={item.hrefSub as string}
+                      title={item.subtitle}
+                      className="hover:text-primary block"
+                    >
+                      {item.subtitle}
+                    </Link>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="inline">{item.icon}</div>
+                  <div className="inline">
+                    <Link
+                      href={item.href}
+                      title={item.title}
+                      className="hover:text-primary"
+                    >
+                      {item.title}
+                    </Link>
+                    <Typography variant="p" text={item.subtitle} />
+                  </div>
+                </>
+              )}
             </div>
           ))}
         </div>
@@ -58,7 +82,7 @@ export default function Footer() {
         </div>
 
         {/* Company Info */}
-        <div className="max-w-screen-xl px-4 mx-auto  mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div className="max-w-screen-xl px-4 mx-auto mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 pb-6">
           {/* About Section */}
           <div className="mb-8 md:col-span-3 lg:col-span-2">
             <h5 className="text-2xl font-bold">

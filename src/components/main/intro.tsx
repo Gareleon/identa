@@ -7,7 +7,7 @@ export default function Intro() {
     <section className="w-full h-screen min-h-max pt-6 mx-auto bg-gradient-to-r  from-primary to-secondary pb-0 flex justify-center items-center">
       <div className="max-w-screen-xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-10 md:gap-6 lg:gap-10 py-20 px-4 ">
         <div className="w-full sm:w-1/2 text-background flex flex-col space-y-3 lg:space-y-6">
-          <Typography variant="h1" text="Dobrodošli u Identa" />
+          <Typography variant="h1" text="Dobro došli u Identa" />
           <hr className="border-muted h-px w-[50%]" />
           <Typography variant="h3" text="Stomatološke usluge po vašoj meri" />
           <Typography

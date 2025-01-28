@@ -18,7 +18,7 @@ const iconStyle = "text-primary";
 const services = [
   {
     dentist: {
-      name: "Dr Biljana Petrovic",
+      name: "Dr Biljana Petrović",
       specialty: "Specijalista oralne hirurgije",
       contact: {
         phone: "tel:+381642223288",
@@ -81,7 +81,7 @@ const services = [
   },
   {
     dentist: {
-      name: "Dr Kristina Petkovic",
+      name: "Dr Kristina Petković",
       specialty: "Stomatolog",
       contact: {
         phone: "tel:+381631802999",
@@ -169,7 +169,7 @@ export function Services() {
 
         {services.map((service, index) => (
           <div
-            className={`w-full flex flex-col items-start justify-center gap-10 md:gap-2  ${
+            className={`w-full flex flex-col items-center justify-center gap-10 md:gap-2  ${
               (index + 1) % 2 !== 0 ? "md:flex-row" : "md:flex-row-reverse"
             }`}
             key={index}

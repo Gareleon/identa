@@ -2,14 +2,23 @@ import { MdFacebook, MdOutlinePhoneInTalk } from "react-icons/md";
 import { RxInstagramLogo } from "react-icons/rx";
 import { FaMapMarkedAlt } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
+import { Clock } from "lucide-react";
 
 const contactInfo = [
+  {
+    type: "working-hours",
+    icon: <Clock size={50} className="text-primary/80" />,
+    title: "Ponedeljak - Petak",
+    subtitle: "10:00 - 20:00",
+    href: "",
+  },
   {
     type: "phone",
     icon: <MdOutlinePhoneInTalk size={50} className="text-primary/80" />,
     title: "+381 642223288",
-    subtitle: "Pon-Pet 10:00-20:00",
+    subtitle: "+381 631802999",
     href: "tel:+381642223288",
+    hrefSub: "tel:+381631802999",
   },
 
   {
@@ -74,7 +83,7 @@ const projects = [
 const usefulLinks = [
   {
     name: "Saveti za negu zuba",
-    href: "https://www.apotekaflos.rs/sr/clanak/5-saveta-za-pravilnu-negu-zuba",
+    href: "https://curaprox.rs/blog/post/cisti-zubi-detaljno-uputstvo",
   },
   {
     name: "Zašto su redovni pregledi važni?",
@@ -92,14 +101,14 @@ const usefulLinks = [
 
 const contactDetails = [
   {
-    name: "+381 642223288",
-    href: "tel:+381642223288",
-    title: "Kontakt telefon Identa",
-  },
-  {
     name: "kontakt@identa.rs",
     href: "mailto:kontakt@identa.rs",
     title: "Kontakt e-mail Identa",
+  },
+  {
+    name: "+381 642223288",
+    href: "tel:+381642223288",
+    title: "Kontakt telefon Identa",
   },
   {
     name: "+381 631802999",
