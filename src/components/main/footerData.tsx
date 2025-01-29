@@ -31,9 +31,9 @@ const contactInfo = [
   {
     type: "email",
     icon: <IoIosMail size={50} className="text-primary/80" />,
-    title: "kontakt@identa.rs",
+    title: "identanis@gmail.com",
     subtitle: "Podrška i informacije",
-    href: "mailto:kontakt@identa.rs",
+    href: "mailto:identanis@gmail.com",
   },
 ];
 
@@ -101,8 +101,8 @@ const usefulLinks = [
 
 const contactDetails = [
   {
-    name: "kontakt@identa.rs",
-    href: "mailto:kontakt@identa.rs",
+    name: "identanis@gmail.com",
+    href: "mailto:identanis@gmail.com",
     title: "Kontakt e-mail Identa",
   },
   {
