@@ -22,7 +22,7 @@ export async function POST(req: Request) {
     };
 
     await sgMail.send(msg);
-    console.log("Email sent successfully:", message);
+    // console.log("Email sent successfully:", message);
 
     return NextResponse.json(
       { message: "Email sent successfully" },
