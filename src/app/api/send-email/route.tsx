@@ -12,8 +12,8 @@ export async function POST(req: Request) {
     const { first_name, last_name, email, message } = await req.json();
 
     const msg = {
-      to: "dragan.ignjatovic.student@gmail.com", // Your receiving email
-      from: "dragan.ignjatovic.student@gmail.com", // Verified sender email
+      to: "identanis@gmail.com", // Your receiving email
+      from: "identanis@gmail.com", // Verified sender email
       subject: `Nova poruka od ${first_name} ${last_name}`,
       text: message,
       html: `<p><strong>Ime:</strong> ${first_name} ${last_name}</p>
