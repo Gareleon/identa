@@ -48,7 +48,7 @@ const categorizedServices = [
     ],
   },
   {
-    category: "Ortodontija",
+    category: "Ortodoncija",
     services: [
       { name: "Fiksni aparati za ispravljanje zuba" },
       { name: "Folije za ispravljanje zuba" },
@@ -79,7 +79,7 @@ export function Prices() {
           {categorizedServices.map((category, index) => (
             <div
               key={index}
-              className="w-full h-72  min-h-max border shadow-sm bg-gradient-to-br from-primary to-secondary/40 rounded-md p-4 hover:shadow-lg hover:scale-105 transition-all duration-300 text-slate-800"
+              className="w-full h-80  min-h-max border shadow-sm bg-gradient-to-br from-primary to-secondary/40 rounded-md p-4 hover:shadow-lg hover:scale-105 transition-all duration-300 text-slate-800"
             >
               <Typography
                 variant="h4"
