@@ -53,8 +53,8 @@ export default function Header() {
           <Image
             src="/images/logo.png"
             alt="identa-logo"
-            width={80}
-            height={80}
+            width={50}
+            height={60}
           />
           {/* <Typography variant="h1" text="Identa" /> */}
         </div>
